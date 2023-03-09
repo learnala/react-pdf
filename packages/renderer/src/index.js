@@ -33,7 +33,7 @@ const pdf = initialValue => {
 
   const render = async (compress = true) => {
     const props = container.document.props || {};
-    const { pdfVersion, language, pageLayout, pageMode } = props;
+    const { pdfVersion, language, pageLayout, pageMode, userPassword, ownerPassword, permissions } = props;
 
     const ctx = new PDFDocument({
       compress,
@@ -43,6 +43,9 @@ const pdf = initialValue => {
       autoFirstPage: false,
       pageLayout,
       pageMode,
+      userPassword,
+      ownerPassword,
+      permissions
     });
 
     const layout = await layoutDocument(container.document, fontStore);
