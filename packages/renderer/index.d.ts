@@ -29,6 +29,9 @@ declare namespace ReactPDF {
     language?: string;
     pdfVersion?: PDFVersion;
     onRender?: (props: OnRenderProps) => any;
+    userPassword?: string;
+    ownerPassword?: string;
+    permissions?: Object;
   }
 
   /**
